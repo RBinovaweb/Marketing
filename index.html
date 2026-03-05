@@ -1,52 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 
 <meta charset="UTF-8">
-<title>Gerador Inteligente IPTV</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>IA Marketing IPTV</title>
 
 <style>
 
 body{
-font-family:Arial;
-background:#0f172a;
+background:#020617;
 color:white;
-padding:30px;
+font-family:Arial;
+padding:15px;
 text-align:center;
 }
 
 .box{
-
-background:#1e293b;
-padding:30px;
-border-radius:10px;
-max-width:900px;
+background:#0f172a;
+padding:20px;
+border-radius:15px;
+max-width:520px;
 margin:auto;
+}
 
+h2{
+color:#38bdf8;
 }
 
 button{
-
-padding:12px 20px;
-margin:10px;
+padding:12px;
+margin:6px;
 border:none;
 border-radius:8px;
 background:#2563eb;
 color:white;
-font-size:16px;
 cursor:pointer;
+width:45%;
+}
 
+.copy{
+background:#16a34a;
+width:100%;
 }
 
 textarea{
-
 width:100%;
-height:300px;
-margin-top:15px;
-border-radius:8px;
+height:230px;
+margin-top:10px;
+border-radius:10px;
 border:none;
 padding:10px;
-
+font-size:14px;
 }
 
 </style>
@@ -57,190 +64,175 @@ padding:10px;
 
 <div class="box">
 
-<h2>🔥 Gerador Inteligente de Marketing IPTV</h2>
+<h2>🤖 IA Marketing IPTV</h2>
 
-<p>Gere várias mensagens de divulgação automaticamente</p>
-
-<button onclick="gerarStatus()">Status WhatsApp</button>
-<button onclick="gerarFacebook()">Post Facebook</button>
-<button onclick="gerarVenda()">Mensagens de Venda</button>
-<button onclick="gerarProva()">Prova Social</button>
-<button onclick="gerarPromocoes()">Promoções</button>
+<button onclick="gerar()">Gerar Mensagem</button>
+<button onclick="gerarPost()">Gerar Post</button>
 
 <textarea id="resultado"></textarea>
+
+<button class="copy" onclick="copiar()">📋 Copiar</button>
 
 </div>
 
 <script>
 
-let canais = [
-"+10.000 canais",
-"todos canais liberados",
-"filmes e séries atualizados",
+function r(lista){
+return lista[Math.floor(Math.random()*lista.length)]
+}
+
+let aberturas=[
+
+"🔥 O IPTV que está conquistando todo mundo!",
+"📺 Transforme sua TV em um cinema completo.",
+"🚀 Chega de TV limitada!",
+"💥 Assista tudo em um único aplicativo.",
+"⭐ O melhor IPTV disponível hoje."
+
+]
+
+let conteudos=[
+
+"+10.000 canais liberados",
+"+15.000 canais e filmes",
+"filmes e séries atualizados diariamente",
+"lançamentos recentes de cinema",
 "canais nacionais e internacionais",
-"conteúdo completo de entretenimento"
+"canais esportivos completos",
+"catálogo com milhares de conteúdos"
+
 ]
 
-let futebol = [
-"futebol ao vivo",
-"campeonatos ao vivo",
-"jogos sem travamento",
-"premiere e sportv",
-"todos jogos liberados"
+let futebol=[
+
+"todos os jogos ao vivo",
+"Premiere liberado",
+"Sportv liberado",
+"Champions League e Libertadores",
+"campeonatos nacionais e internacionais"
+
 ]
 
-let dispositivos = [
+let beneficios=[
+
+"imagem HD e Full HD",
+"servidor rápido e estável",
+"sem travamentos",
+"ativação imediata",
+"suporte completo",
+"funciona com internet comum"
+
+]
+
+let dispositivos=[
+
 "Smart TV",
 "TV Box",
 "celular",
+"tablet",
 "computador",
-"tablet"
+"Fire Stick"
+
 ]
 
-let emojis = ["🔥","📺","🎬","⚽","🚀","⭐"]
+let chamadas=[
 
-function random(lista){
+"Peça um teste gratuito agora.",
+"Teste grátis disponível.",
+"Solicite seu teste agora mesmo.",
+"Entre em contato e receba um teste grátis."
 
-return lista[Math.floor(Math.random()*lista.length)]
+]
 
-}
+let precos=[
 
-function gerarStatus(){
+"💰 Apenas R$20 por mês",
+"💰 Plano mensal R$20",
+"💰 Acesso completo por R$20",
+"💰 IPTV completo R$20 mensal"
 
-let texto=""
+]
 
-for(let i=0;i<20;i++){
+function gerar(){
 
-texto+=`${random(emojis)} IPTV funcionando perfeito
+let mensagem=`
 
-${random(canais)}
-${random(futebol)}
+${r(aberturas)}
 
-Funciona em ${random(dispositivos)}
+📺 Conteúdo disponível:
 
-🎁 Teste grátis
+✔ ${r(conteudos)}
+✔ ${r(conteudos)}
 
---------------------
+⚽ Esportes:
 
-`
+✔ ${r(futebol)}
 
-}
+⭐ Benefícios:
 
-document.getElementById("resultado").value=texto
+✔ ${r(beneficios)}
+✔ ${r(beneficios)}
+✔ ${r(beneficios)}
 
-}
+📱 Funciona em:
 
-function gerarFacebook(){
+✔ ${r(dispositivos)}
 
-let texto=""
+${r(precos)}
 
-for(let i=0;i<15;i++){
-
-texto+=`${random(emojis)} IPTV PREMIUM
-
-✔ ${random(canais)}
-✔ ${random(canais)}
-✔ ${random(futebol)}
-
-Funciona em ${random(dispositivos)}
-
-🔥 Promoção
-
-Primeiro mês R$15
-Depois R$20
-
-🎁 Teste grátis
-
---------------------
+🎁 ${r(chamadas)}
 
 `
 
-}
-
-document.getElementById("resultado").value=texto
+document.getElementById("resultado").value=mensagem
 
 }
 
-function gerarVenda(){
+function gerarPost(){
 
-let texto=""
+let mensagem=`
 
-for(let i=0;i<15;i++){
+${r(aberturas)}
 
-texto+=`Olá 👋
+Imagine ter acesso a milhares de canais, filmes e séries em um único lugar.
 
-Tenho IPTV Premium com:
+📺 ${r(conteudos)}
+📺 ${r(conteudos)}
+⚽ ${r(futebol)}
 
-📺 ${random(canais)}
-🎬 ${random(canais)}
-⚽ ${random(futebol)}
+Tudo com:
 
-Funciona em ${random(dispositivos)}
+✔ ${r(beneficios)}
+✔ ${r(beneficios)}
 
-🎁 Posso liberar um teste grátis para você.
+📱 Compatível com ${r(dispositivos)}
 
---------------------
+${r(precos)}
+
+🎁 ${r(chamadas)}
 
 `
 
-}
-
-document.getElementById("resultado").value=texto
+document.getElementById("resultado").value=mensagem
 
 }
 
-function gerarProva(){
+function copiar(){
 
-let texto=""
+let campo=document.getElementById("resultado")
 
-for(let i=0;i<15;i++){
-
-let numero = Math.floor(Math.random()*10)+1
-
-texto+=`🔥 +${numero} clientes ativados hoje
-
-IPTV funcionando perfeito
-
-📺 ${random(canais)}
-
-🎁 Teste grátis disponível
-
---------------------
-
-`
-
+if(campo.value==""){
+alert("Gere uma mensagem primeiro")
+return
 }
 
-document.getElementById("resultado").value=texto
+campo.select()
 
-}
+document.execCommand("copy")
 
-function gerarPromocoes(){
+alert("Mensagem copiada!")
 
-let texto=""
-
-for(let i=0;i<15;i++){
-
-texto+=`🔥 PROMOÇÃO IPTV
-
-Primeiro mês apenas:
-
-💰 R$15
-
-Depois R$20 mensal
-
-📺 ${random(canais)}
-⚽ ${random(futebol)}
-
-🎁 Teste grátis agora
-
---------------------
-
-`
-
-}
-
-document.getElementById("resultado").value=texto
+campo.value=""
 
 }
 
