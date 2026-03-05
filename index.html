@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<meta charset="UTF-8">
+<title>Gerador Inteligente IPTV</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#0f172a;
+color:white;
+padding:30px;
+text-align:center;
+}
+
+.box{
+
+background:#1e293b;
+padding:30px;
+border-radius:10px;
+max-width:900px;
+margin:auto;
+
+}
+
+button{
+
+padding:12px 20px;
+margin:10px;
+border:none;
+border-radius:8px;
+background:#2563eb;
+color:white;
+font-size:16px;
+cursor:pointer;
+
+}
+
+textarea{
+
+width:100%;
+height:300px;
+margin-top:15px;
+border-radius:8px;
+border:none;
+padding:10px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>🔥 Gerador Inteligente de Marketing IPTV</h2>
+
+<p>Gere várias mensagens de divulgação automaticamente</p>
+
+<button onclick="gerarStatus()">Status WhatsApp</button>
+<button onclick="gerarFacebook()">Post Facebook</button>
+<button onclick="gerarVenda()">Mensagens de Venda</button>
+<button onclick="gerarProva()">Prova Social</button>
+<button onclick="gerarPromocoes()">Promoções</button>
+
+<textarea id="resultado"></textarea>
+
+</div>
+
+<script>
+
+let canais = [
+"+10.000 canais",
+"todos canais liberados",
+"filmes e séries atualizados",
+"canais nacionais e internacionais",
+"conteúdo completo de entretenimento"
+]
+
+let futebol = [
+"futebol ao vivo",
+"campeonatos ao vivo",
+"jogos sem travamento",
+"premiere e sportv",
+"todos jogos liberados"
+]
+
+let dispositivos = [
+"Smart TV",
+"TV Box",
+"celular",
+"computador",
+"tablet"
+]
+
+let emojis = ["🔥","📺","🎬","⚽","🚀","⭐"]
+
+function random(lista){
+
+return lista[Math.floor(Math.random()*lista.length)]
+
+}
+
+function gerarStatus(){
+
+let texto=""
+
+for(let i=0;i<20;i++){
+
+texto+=`${random(emojis)} IPTV funcionando perfeito
+
+${random(canais)}
+${random(futebol)}
+
+Funciona em ${random(dispositivos)}
+
+🎁 Teste grátis
+
+--------------------
+
+`
+
+}
+
+document.getElementById("resultado").value=texto
+
+}
+
+function gerarFacebook(){
+
+let texto=""
+
+for(let i=0;i<15;i++){
+
+texto+=`${random(emojis)} IPTV PREMIUM
+
+✔ ${random(canais)}
+✔ ${random(canais)}
+✔ ${random(futebol)}
+
+Funciona em ${random(dispositivos)}
+
+🔥 Promoção
+
+Primeiro mês R$15
+Depois R$20
+
+🎁 Teste grátis
+
+--------------------
+
+`
+
+}
+
+document.getElementById("resultado").value=texto
+
+}
+
+function gerarVenda(){
+
+let texto=""
+
+for(let i=0;i<15;i++){
+
+texto+=`Olá 👋
+
+Tenho IPTV Premium com:
+
+📺 ${random(canais)}
+🎬 ${random(canais)}
+⚽ ${random(futebol)}
+
+Funciona em ${random(dispositivos)}
+
+🎁 Posso liberar um teste grátis para você.
+
+--------------------
+
+`
+
+}
+
+document.getElementById("resultado").value=texto
+
+}
+
+function gerarProva(){
+
+let texto=""
+
+for(let i=0;i<15;i++){
+
+let numero = Math.floor(Math.random()*10)+1
+
+texto+=`🔥 +${numero} clientes ativados hoje
+
+IPTV funcionando perfeito
+
+📺 ${random(canais)}
+
+🎁 Teste grátis disponível
+
+--------------------
+
+`
+
+}
+
+document.getElementById("resultado").value=texto
+
+}
+
+function gerarPromocoes(){
+
+let texto=""
+
+for(let i=0;i<15;i++){
+
+texto+=`🔥 PROMOÇÃO IPTV
+
+Primeiro mês apenas:
+
+💰 R$15
+
+Depois R$20 mensal
+
+📺 ${random(canais)}
+⚽ ${random(futebol)}
+
+🎁 Teste grátis agora
+
+--------------------
+
+`
+
+}
+
+document.getElementById("resultado").value=texto
+
+}
+
+</script>
+
+</body>
+</html>
